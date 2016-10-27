@@ -62,9 +62,29 @@ namespace TextJyawo
                     output += temp + Environment.NewLine + Environment.NewLine;
                 }
             }
-
-            Clipboard.SetText(output);
+            if (chkCopyToClipBoard.IsChecked.Value)
+            {
+                Clipboard.SetText(output);
+            }
+           
             txtOutput.Text = output;
+        }
+
+        
+
+        private void txtReplace_KeyUp(object sender, KeyEventArgs e)
+        {
+            btnReplace_Click(null, null);
+        }
+
+        private void txtInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            btnReplace_Click(null, null);
+        }
+
+        private void txtFind_KeyUp(object sender, KeyEventArgs e)
+        {
+            btnReplace_Click(null, null);
         }
     }
 }
